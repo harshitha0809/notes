@@ -1,0 +1,232 @@
+
+
+Language :-
+-----------
+for communication with humans
+hindi,telugu,tamil,kannada,english
+
+
+Programming Language:-
+---------------------------
+
+		machines
+		
+		POP								OOP
+B,C,BCPL,photon,cobol....			C++,Java,Python,.net,.....
+
+
+
+				1)	security				abstraction, encapsulation		oops
+                2) performance				inheritance,polymorphisam    
+
+
+
+		OOPS/OOPL   
+
+java oops/oopl		sun micro system
+
+		june 24th 1995				oracle 
+
+				1)Platform Independent
+				2)Garbage Collection
+
+					James Gosling	jdk1.0-->JRE-->JVM
+					jdk8
+					 16
+1)Platform Independent:
+========================
+			53---core java--->small letters 
+			
+						.java   	//user language  ,source code  
+						
+					translator/translation	,			//JVM machine language  0's 1's binary,byte
+	
+			
+					compiler/compaliation
+			
+			
+						.class     byte code 	javac filename.java 
+			
+			
+												java classname	
+			
+			.java,.class
+			
+			
+			java PI
+						WORA
+			
+			Oracle			microsoft	
+			
+			java 			.net
+			
+			
+			
+	2)Garbage Collection		
+			
+					
+		garbage collector--->jvm
+
+
+
+
+Variables:
+==========
+			name of storage location
+
+				name ="sandeep"
+
+
+				marks=78
+
+syntax:
+======
+
+		datatype varname=value;
+
+		 age=28;//static typing
+
+
+53
+dataypes:lower case
+---------
+primitive DT		8bits												String,Array...
+		byte		1bytes			-128 to 127
+		short		2bytes			-32768 to 32767
+		int 		4bytes			-2147483768 to 2147483767
+		long     	8bytes			-(2 power 63) to (2 power 63)-1
+
+		float 		4bytes			
+		double		8bytes
+
+		boolean 		true/false
+		
+		char 			'M'  UNICODE 
+
+127
+		byte age=23;
+
+				
+
+			datatype varname =value;
+			
+			byte age=28;
+			
+	types:
+	------
+				2 types
+				
+				local variable
+				
+				global variable
+
+
+method-->local variable
+
+out side the method and with in the class -->global variable
+
+
+
+
+	instance and static variables 
+
+
+four differences:
+------------------
+syntax:					javac filename.java compilation   .class   java Test --->JVM
+-------
+		static char gender='M';//global and static
+		 float marks=123.67f;//global and instance
+
+memory:
+-------
+		static properties will get memory space ONLY ONCE at the time class loading into jvm
+		instance properties will get memory space FOR EVERY OBJECT CREATION
+	
+		class , object
+		
+			object creation:
+			-----------------
+			classname objname=new classname();
+Access:
+-------
+		static properties can be accessed with classname
+		instance properties can be accessed with objname
+	
+Use:
+---
+			for common data like clgname ,schoolname,orgname....static
+
+			for unique data like contact,pan,aadhar....instance	
+
+
+ 
+Methods:
+========
+			public static void main(String args[])//method signature
+			{
+			
+			//method body
+			
+			
+			}
+			//reusability
+			
+				static	void addition(int a,int b)
+							{
+							
+							}
+			
+			
+
+syntax:				
+------------
+
+
+
+
+
+memory:
+-------
+		static properties will get memory space ONLY ONCE at the time class loading into jvm
+		instance properties will get memory space FOR EVERY OBJECT CREATION
+	
+		class , object
+		
+			object creation:
+			-----------------
+			classname objname=new classname();
+Access:
+-------
+		static properties can be accessed with classname
+		instance properties can be accessed with objname
+	
+Use:
+---
+			for common data like clgname ,schoolname,orgname....static
+
+			for unique data like contact,pan,aadhar....instance	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

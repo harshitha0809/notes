@@ -1,0 +1,296 @@
+SQL> conn/as sysdba;
+Connected.
+SQL> create user dhushyanth identified by 9381249320;
+User created.
+SQL> grant connect,resource to dhushyanth;
+
+Grant succeeded.
+
+SQL> conn dhushyanth/9381249320
+Connected.
+
+create table employees(empid number(10),ename varchar2(10),esal number(10));
+
+Table created.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(10)
+ ENAME                                              VARCHAR2(10)
+ ESAL                                               NUMBER(10)
+
+SQL> alter table employees add eadd varchar2(10);
+
+Table altered.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(10)
+ ENAME                                              VARCHAR2(10)
+ ESAL                                               NUMBER(10)
+ EADD                                               VARCHAR2(10)
+
+SQL> alter table employees drop column esal;
+
+Table altered.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(10)
+ ENAME                                              VARCHAR2(10)
+ EADD                                               VARCHAR2(10)
+
+SQL> alter table employees rename column empid to eid;
+
+Table altered.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(10)
+ ENAME                                              VARCHAR2(10)
+ EADD                                               VARCHAR2(10)
+
+SQL> alter table employees modify eid varchar2(10);
+
+Table altered.
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                VARCHAR2(10)
+ ENAME                                              VARCHAR2(10)
+ EADD                                               VARCHAR2(10)
+
+SQL> rename employees to emps;
+
+Table renamed.
+
+SQL> desc employees;
+ERROR:
+ORA-04043: object employees does not exist
+
+
+SQL> desc emps
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EID                                                VARCHAR2(10)
+ ENAME                                              VARCHAR2(10)
+ EADD                                               VARCHAR2(10)
+
+SQL> select*from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+EMPS                           TABLE
+
+SQL> create table employees(empid number(10),ename varchar2(10),esal number(10));
+
+Table created.
+
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+EMPLOYEES                      TABLE
+EMPS                           TABLE
+
+SQL> drop table emps;
+
+Table dropped.
+
+SQL> desc emps
+ERROR:
+ORA-04043: object emps does not exist
+
+
+SQL> select*from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+EMPLOYEES                      TABLE
+
+SQL> desc employees;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPID                                              NUMBER(10)
+ ENAME                                              VARCHAR2(10)
+ ESAL                                               NUMBER(10)
+
+SQL> insert into employees values(123,'dhushyanth',90000);
+
+1 row created.
+
+SQL> insert into employees values(129,'hari',80000);
+
+1 row created.
+
+SQL> insert into employees values(126,'vasu',70000);
+
+1 row created.
+
+SQL> insert into employees values(141,'bob',60000);
+
+1 row created.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hari            80000
+       126 vasu            70000
+       141 bob             60000
+
+SQL> update employees set ename='hariprashnna' where empid=129;
+update employees set ename='hariprashnna' where empid=129
+                           *
+ERROR at line 1:
+ORA-12899: value too large for column "DHUSHYANTH"."EMPLOYEES"."ENAME" (actual:
+12, maximum: 10)
+
+
+SQL> update employees set ename='hariprash' where empid=129;
+
+1 row updated.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hariprash       80000
+       126 vasu            70000
+       141 bob             60000
+
+SQL> delete employees where empid=126;
+
+1 row deleted.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hariprash       80000
+       141 bob             60000
+
+SQL> select empid from employees;
+
+     EMPID
+----------
+       123
+       129
+       141
+
+SQL> select empid,ename from employees;
+
+     EMPID ENAME
+---------- ----------
+       123 dhushyanth
+       129 hariprash
+       141 bob
+
+SQL> select empid,ename from employees where esal>60000;
+
+     EMPID ENAME
+---------- ----------
+       123 dhushyanth
+       129 hariprash
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hariprash       80000
+       141 bob             60000
+
+SQL> truncate table employees;
+
+Table truncated.
+
+SQL> select * from employees;
+
+no rows selected
+
+SQL> insert into employees values(123,'dhushyanth',90000);
+
+1 row created.
+
+SQL> insert into employees values(129,'hari',80000);
+
+1 row created.
+
+SQL> insert into employees values(126,'vasu',70000);
+
+1 row created.
+
+SQL> insert into employees values(141,'bob',60000);
+
+1 row created.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hari            80000
+       126 vasu            70000
+       141 bob             60000
+
+SQL> show user;
+USER is "DHUSHYANTH"
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+EMPLOYEES                      TABLE
+
+SQL> commit;
+
+Commit complete. //used to save data physically before closing the DB
+
+SQL> insert into employees values(141,'bob',60000);
+
+1 row created.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hari            80000
+       126 vasu            70000
+       141 bob             60000
+       141 bob             60000
+
+SQL> rollback;//remove data that is added recently/duplicate value.
+
+Rollback complete.
+
+SQL> select * from employees;
+
+     EMPID ENAME            ESAL
+---------- ---------- ----------
+       123 dhushyanth      90000
+       129 hari            80000
+       126 vasu            70000
+       141 bob             60000
+	   
+Constraint:
+-----------
+	Rule or restriction applied on the table data.
+	Ex: 3 Employees with the same data where we have to apply restriction on the table data.
+	
+	notnull------|
+	check		 |
+	unique		 |------->Constraints
+	primarykey	 |
+	foriegnkey---|
+	
+	
+	   

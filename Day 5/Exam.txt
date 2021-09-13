@@ -1,0 +1,38 @@
+-------------------
+HARSHITHA SV
+-----------------
+
+
+1)D)0 null,0 null
+2)C) compile time error , hi 
+3)B) No     
+4)A)  Yes 
+5)A)valid
+6)A) Declare the method with the keyword public
+7)C) Constructor
+8)A) Compile time error
+9)C)11,compile time error   
+10)A) if yes how ?  when we make a method final we are adding a restriction,
+ that derived class cannot override this particular method.
+11)B)no
+12)A)Yes
+13)c)11 
+14)B)No
+15)B)Memory occupied by objects with no reference is automatically reclaimed for deletion
+16)A) yes
+17)A)Sterialization
+18)E)All the above
+19)B)Compiletime error
+20)C) 1&4                        
+21)A)0
+22)I = 1 
+23)A)one class inheriting from more super classes
+24 
+25 == Checks whether both the objects are referring to the same memory space or not
+     .equals() checks whether both the values are same or not
+     conpareto() checks the difference betw 2 objects/values 
+26)B)  108,elc  
+27) 
+28)E)True,True,False
+29 StringBuffer is Synchronous and stringBuilder is non sysnchronous
+30 c) 0 2 4
